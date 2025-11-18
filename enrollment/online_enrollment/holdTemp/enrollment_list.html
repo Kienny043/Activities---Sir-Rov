@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Enrollments</h2>
+    <ul>
+        {% for enrollment in enrollments %}
+            <li>
+               Student: {{ enrollment.student }} | Course: {{enrollment.course}} | Date: {{enrollment.enrollment_date}} | Duration: {{enrollment.duration}}
+            </li>
+            {% empty %}
+            <li>No Course Available</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+

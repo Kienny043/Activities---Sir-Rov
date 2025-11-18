@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Course</h2>
+    <ul>
+        {% for course in courses %}
+            <li>
+               {{ course.course_id }} - {{course.course_name}} {{course.units}} units,{{course.duration}} 
+            </li>
+            {% empty %}
+            <li>No Course Available</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h2>Add Instructor</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Instructor</button>
+        <a href="{% url 'instructor_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Subjects</h2>
+    <ul>
+        {% for subject in subjects %}
+            <li>
+               {{ subject.subject_id }} - {{subject.subject_name}} | Units: {{subject.units}} | Schedule: {{subject.schedule}} | Duration: {{subject.duration}}
+            </li>
+            {% empty %}
+            <li>No Course Available</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+

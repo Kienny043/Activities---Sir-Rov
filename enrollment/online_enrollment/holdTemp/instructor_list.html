@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Instructors</h2>
+    <ul>
+        {% for instructor in instructors %}
+            <li>
+               {{ instrutor.instructor_id }} - {{instructor.name}} | Dept: {{instructor.department}} | Email: {{instructor.email}} | Phone: {{instructor.phone}}
+            </li>
+            {% empty %}
+            <li>No Instructor Available</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+

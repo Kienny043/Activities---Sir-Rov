@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    {% for people in peeps %}
+        <H1>{{people.name}}</H1>
+        <p>{{people.description}}</p>
+    {% endfor %}
+
+{% endblock %}

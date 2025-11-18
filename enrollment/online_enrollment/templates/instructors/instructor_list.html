@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h2>Instructors List</h2>
+    <a href="{% url 'add_instructor' %}">Add Instructor</a>
+
+    {% if instructors %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Instructor ID</th>
+                    <th>Name</th>
+                    <th>Dept</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instructor in instructors %}
+                    <tr>
+                        <td>{{ instructor.instructor_id }}</td>
+                        <td>{{ instructor.name }}</td>
+                        <td>{{ instructor.department }}</td>
+                        <td>{{ instructor.phone }}</td>
+                        <td>
+                            <a href="{% url 'edit_instructor' instructor.pk %}">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No students found.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
